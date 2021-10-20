@@ -19,8 +19,8 @@ namespace MedicineStock
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=tcp:medicinestockmicroservicedbserver.database.windows.net,1433;Initial Catalog=MedicineStock_db;User Id=divya214@medicinestockmicroservicedbserver;Password=Divya@214");
-                    /*Server=LAPTOP-NI5UBAVP\\SQLEXPRESS; database=StockDataBase; integrated security=true*/
+                optionsBuilder.UseSqlServer("Server=tcp:stockdb1234.database.windows.net,1433;Initial Catalog=StockDB;Persist Security Info=False;User ID=divya214;Password=Divya@214;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                /*Data Source=tcp:medicinestockmicroservicedbserver.database.windows.net,1433;Initial Catalog=MedicineStock_db;User Id=divya214@medicinestockmicroservicedbserver;Password=Divya@214*/
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -77,6 +77,6 @@ namespace MedicineStock
              }
             );
         }
-        public virtual DbSet<MedicineStock> MedicineStocks { get; internal set; }
+        public virtual DbSet<MedicineStock> MedicineStocks { get; set; }
     }
 }

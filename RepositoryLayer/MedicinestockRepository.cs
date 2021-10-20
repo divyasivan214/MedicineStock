@@ -15,8 +15,9 @@ namespace MedicineStock
             List<MedicineStock> stock = new List<MedicineStock>();
             try
             {
-                stock = await (from stk in dbContext.MedicineStocks select stk).ToListAsync();
-                return stock;
+                //stock = await (from stk in dbContext.MedicineStocks select stk).ToListAsync();
+                //return stock;
+                return await dbContext.MedicineStocks.ToListAsync();
             }
             catch (Exception)
             {
