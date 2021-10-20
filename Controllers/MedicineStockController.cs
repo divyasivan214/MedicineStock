@@ -17,26 +17,19 @@ namespace MedicineStock.Controllers
         {
             imedicineObj = msr;
         }
-//         [HttpGet]
-//         public async Task<IActionResult> GetStock()
-//         {
-//             _log4net.Info("GetStock function invoked");
-//             List<MedicineStock> medStock = await (imedicineObj.GetAllStocks());
-//             if (medStock != null)
-//             {
-//                 return Ok(medStock);
-//             }
-//             else
-//             {
-//                 return NoContent();
-//             }
-//         }
-            [HttpGet]
-        public IActionResult GetStockByName(string name)
+        [HttpGet]
+        public async Task<IActionResult> GetStock()
         {
-            MedicineStockContext db = new MedicineStockContext();
-            MedicineStock s = db.MedicineStocks.Where(x => x.Name == name).Select(x => x).FirstOrDefault();
-            return Ok(s);
+            _log4net.Info("GetStock function invoked");
+            List<MedicineStock> medStock = await (imedicineObj.GetAllStocks());
+            if (medStock != null)
+            {
+                return Ok(medStock);
+            }
+            else
+            {
+                return NoContent();
+            }
         }
     }
 }
