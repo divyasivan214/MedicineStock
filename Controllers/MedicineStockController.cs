@@ -32,11 +32,11 @@ namespace MedicineStock.Controllers
 //             }
 //         }
             [HttpGet]
-            public ActionResult GetStockByName(string name)
-            {
-                private readonly MedicineStockContext db=new MedicineStockContext();
-                MedicineStock s=db.MedicineStocks.Where(x=>x.Name==name).Select(x=>x).FirstOrDefault();
-                return Ok(s);
-            }
+        public IActionResult GetStockByName(string name)
+        {
+            MedicineStockContext db = new MedicineStockContext();
+            MedicineStock s = db.MedicineStocks.Where(x => x.Name == name).Select(x => x).FirstOrDefault();
+            return Ok(s);
+        }
     }
 }
