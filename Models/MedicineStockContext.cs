@@ -32,7 +32,7 @@ namespace MedicineStock
                 Name = "Dolo 650",
                 ChemicalComposition = "Paracetamol,Acetaminophen",
                 TargetAilment = "General",
-                DateOfExpiry = DateTime.Parse("31-12-2022"),
+                DateOfExpiry = DateTime.Parse("08-12-2022"),
                 NumberOfTabletsInStock = 300
             },
             new MedicineStock
@@ -40,7 +40,7 @@ namespace MedicineStock
                 Name = "Orthoherb",
                 ChemicalComposition = "Castor Plant,Adulsa,Neem,Guggul",
                 TargetAilment = "Orthopaedics",
-                DateOfExpiry = DateTime.Parse("26-11-2021"),
+                DateOfExpiry = DateTime.Parse("05-11-2021"),
                 NumberOfTabletsInStock = 190
             },
             new MedicineStock
@@ -56,7 +56,7 @@ namespace MedicineStock
                 Name = "Gaviscon",
                 ChemicalComposition = "Magnesium,Oxide,Silicon,Sodium",
                 TargetAilment = "General",
-                DateOfExpiry = DateTime.Parse("20-08-2022"),
+                DateOfExpiry = DateTime.Parse("02-08-2022"),
                 NumberOfTabletsInStock = 150
             },
             new MedicineStock
