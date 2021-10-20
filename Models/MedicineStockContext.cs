@@ -19,7 +19,8 @@ namespace MedicineStock
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=HP; database=StockDataBase; integrated security=true");
+                optionsBuilder.UseSqlServer("Data Source=tcp:medicinestockmicroservicedbserver.database.windows.net,1433;Initial Catalog=MedicineStock_db;User Id=divya214@medicinestockmicroservicedbserver;Password=Divya@214");
+                    /*Server=LAPTOP-NI5UBAVP\\SQLEXPRESS; database=StockDataBase; integrated security=true*/
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

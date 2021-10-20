@@ -11,6 +11,7 @@ namespace MedicineStock.Controllers
     [ApiController]
     public class MedicineStockController : ControllerBase
     {
+        static readonly log4net.ILog _log4net = log4net.LogManager.GetLogger(typeof(MedicineStockController));
         private readonly IMedicinestockService imedicineObj;
         public MedicineStockController(IMedicinestockService msr)
         {
@@ -19,6 +20,7 @@ namespace MedicineStock.Controllers
         [HttpGet]
         public async Task<IActionResult> GetStock()
         {
+            _log4net.Info("GetStock function invoked");
             List<MedicineStock> medStock = await (imedicineObj.GetAllStocks());
             if (medStock != null)
             {

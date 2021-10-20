@@ -28,11 +28,12 @@ namespace MedicineStock
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
-                 .AllowAnyHeader().AllowCredentials());
-            });
+            //services.AddCors(c =>
+            //{
+            //    c.AddPolicy("AllowOrigin", options => options.WithOrigins("http://localhost:4200").AllowAnyMethod()
+            //     .AllowAnyHeader().AllowCredentials());
+            //});
+            services.AddCors(c => c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
             services.AddScoped<IMedicinestockService, MedicinestockService>();
             services.AddScoped<IMedicinestockRepository, MedicinestockRepository>();
             services.AddDbContext<MedicineStockContext>(options =>
@@ -45,8 +46,9 @@ namespace MedicineStock
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            loggerFactory.AddLog4Net();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

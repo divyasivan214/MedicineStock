@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MedicineStock.Migrations
 {
     [DbContext(typeof(MedicineStockContext))]
-    [Migration("20211015174656_initial")]
-    partial class initial
+    [Migration("20211020055950_migrstock")]
+    partial class migrstock
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
